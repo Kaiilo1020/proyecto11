@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova Farma - Dashboard</title>
+    <title>Nova Farma - Sistema de Gestión</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -14,121 +14,409 @@
 <body>
 
     <!-- ============================================ -->
-    <!-- NAVBAR SUPERIOR FIJO -->
+    <!-- NAVBAR RESPONSIVE ESTÁNDAR (Requisito Rúbrica) -->
     <!-- ============================================ -->
-    <nav class="top-navbar">
-        <span class="brand">
-            <img src="assets/img/logo.png" alt="Logo" class="img-fluid me-2" style="max-height: 30px;">Nova Farma
-        </span>
-        <div class="user-info">
-            <span>Administrador</span>
-            <!-- Boton hamburguesa: solo visible en movil (d-lg-none) -->
-            <button class="btn btn-sm btn-outline-light d-lg-none" data-bs-toggle="collapse" data-bs-target="#sidebar">
-                <i class="bi bi-list"></i>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">
+                <img src="assets/img/novafarmalogo.png" alt="Logo" class="img-fluid me-2" style="max-height: 30px;">Nova Farma
+            </a>
+            <!-- Botón Hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Menú Colapsable -->
+            <div class="collapse navbar-collapse" id="navbarPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#alertas">Alertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inventario">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#registro">Registro</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- ============================================ -->
-    <!-- SIDEBAR IZQUIERDO -->
+    <!-- SECCIÓN INICIO / DASHBOARD -->
     <!-- ============================================ -->
-    <aside class="sidebar collapse show" id="sidebar">
-        <a href="index.html" class="nav-link active">
-            <i class="bi bi-speedometer2"></i> Dashboard
-        </a>
-        <a href="html/alertas.html" class="nav-link">
-            <i class="bi bi-exclamation-triangle"></i> Alertas
-        </a>
-        <a href="html/inventario.html" class="nav-link">
-            <i class="bi bi-box-seam"></i> Inventario
-        </a>
-        <a href="html/registro.html" class="nav-link">
-            <i class="bi bi-plus-circle"></i> Registro
-        </a>
-    </aside>
+    <section id="inicio" class="py-5 mt-5 bg-light">
+        <div class="container py-4">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold text-dark mb-3">Gestión Inteligente de Farmacia</h1>
+                    <p class="lead text-muted">Controla tu inventario, monitorea vencimientos y registra movimientos en tiempo real con Nova Farma.</p>
+                </div>
+            </div>
 
-    <!-- ============================================ -->
-    <!-- CONTENIDO PRINCIPAL -->
-    <!-- ============================================ -->
-    <main class="main-content">
-
-        <h4 class="mb-4">Dashboard - Resumen General</h4>
-        
-        <!-- KPIs -->
-        <div class="row g-3 mb-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="stat-card">
-                    <small class="text-muted">Total Productos</small>
-                    <h3>1,240</h3>
+            <!-- KPIs (Cards - Requisito Rúbrica) -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 border-start border-primary border-4">
+                        <div class="card-body">
+                            <h6 class="text-muted text-uppercase mb-2">Total Productos</h6>
+                            <h2 class="mb-0 fw-bold">1,240</h2>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="stat-card success">
-                    <small class="text-muted">Ventas Hoy</small>
-                    <h3>S/ 3,450</h3>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 border-start border-success border-4">
+                        <div class="card-body">
+                            <h6 class="text-muted text-uppercase mb-2">Ventas Hoy</h6>
+                            <h2 class="mb-0 fw-bold">S/ 3,450</h2>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="stat-card warning">
-                    <small class="text-muted">Movimientos</small>
-                    <h3>87</h3>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 border-start border-warning border-4">
+                        <div class="card-body">
+                            <h6 class="text-muted text-uppercase mb-2">Movimientos</h6>
+                            <h2 class="mb-0 fw-bold">87</h2>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="stat-card danger">
-                    <small class="text-muted">Alertas</small>
-                    <h3 class="text-danger">5</h3>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 border-start border-danger border-4">
+                        <div class="card-body">
+                            <h6 class="text-muted text-uppercase mb-2">Alertas Críticas</h6>
+                            <h2 class="mb-0 fw-bold text-danger">5</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Tabla de productos mas vendidos -->
-        <div class="table-container p-3">
-            <h5 class="mb-3">Productos mas solicitados hoy</h5>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Producto</th>
-                            <th>Categoria</th>
-                            <th class="text-end">Vendidos</th>
-                            <th class="text-end">Ingreso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Paracetamol 500mg</td>
-                            <td><span class="badge bg-primary">Analgesico</span></td>
-                            <td class="text-end">45</td>
-                            <td class="text-end text-success">S/ 247.50</td>
-                        </tr>
-                        <tr>
-                            <td>Ibuprofeno 400mg</td>
-                            <td><span class="badge bg-warning text-dark">Antiinflamatorio</span></td>
-                            <td class="text-end">32</td>
-                            <td class="text-end text-success">S/ 416.00</td>
-                        </tr>
-                        <tr>
-                            <td>Omeprazol 20mg</td>
-                            <td><span class="badge bg-info text-dark">Gastroprotector</span></td>
-                            <td class="text-end">28</td>
-                            <td class="text-end text-success">S/ 336.00</td>
-                        </tr>
-                        <tr>
-                            <td>Loratadina 10mg</td>
-                            <td><span class="badge bg-success">Antihistaminico</span></td>
-                            <td class="text-end">24</td>
-                            <td class="text-end text-success">S/ 192.00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-    </main>
+    </section>
 
     <!-- ============================================ -->
-    <!-- JS BUNDLE DE BOOTSTRAP -->
+    <!-- SECCIÓN ALERTAS -->
+    <!-- ============================================ -->
+    <section id="alertas" class="py-5">
+        <div class="container py-4">
+            <h2 class="mb-4 fw-bold">Sistema de Alertas</h2>
+            <p class="text-muted mb-4">Monitoreo de vencimientos y quiebres de stock.</p>
+
+            <!-- Tabla Estilizada (Requisito Rúbrica) -->
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="px-4 py-3">Estado</th>
+                                    <th class="py-3">Producto</th>
+                                    <th class="py-3">Lote</th>
+                                    <th class="py-3 text-center">Stock</th>
+                                    <th class="py-3">Vencimiento</th>
+                                    <th class="px-4 py-3 text-center">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-danger">
+                                    <td class="px-4"><span class="badge bg-danger">VENCIDO</span></td>
+                                    <td class="fw-bold">Amoxicilina 500mg</td>
+                                    <td>AM-2024-015</td>
+                                    <td class="text-center">12</td>
+                                    <td class="text-danger fw-bold">15/01/2026</td>
+                                    <td class="px-4 text-center"><button class="btn btn-sm btn-outline-danger">Retirar</button></td>
+                                </tr>
+                                <tr class="table-warning">
+                                    <td class="px-4"><span class="badge bg-warning text-dark">&lt; 30 días</span></td>
+                                    <td class="fw-bold">Paracetamol 1g</td>
+                                    <td>PA-2025-003</td>
+                                    <td class="text-center">45</td>
+                                    <td class="text-warning fw-bold">12/02/2026</td>
+                                    <td class="px-4 text-center"><button class="btn btn-sm btn-outline-warning text-dark">Priorizar</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4"><span class="badge bg-secondary">SIN STOCK</span></td>
+                                    <td class="fw-bold">Losartan 50mg</td>
+                                    <td>-</td>
+                                    <td class="text-center text-danger fw-bold">0</td>
+                                    <td>-</td>
+                                    <td class="px-4 text-center"><button class="btn btn-sm btn-outline-primary">Pedir</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCIÓN INVENTARIO -->
+    <!-- ============================================ -->
+    <section id="inventario" class="py-5 bg-light">
+        <div class="container py-4">
+            <h2 class="mb-4 fw-bold">Inventario de Productos</h2>
+            <p class="text-muted mb-4">Catálogo general de medicamentos y productos.</p>
+
+            <!-- Tabla de Inventario (Estilo limpio) -->
+            <div class="table-container bg-white rounded shadow-sm border">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light text-muted">
+                            <tr>
+                                <th class="fw-normal py-3 px-4">Producto</th>
+                                <th class="fw-normal py-3">Categoría</th>
+                                <th class="fw-normal py-3 text-center">Stock</th>
+                                <th class="fw-normal py-3 text-end">Precio</th>
+                                <th class="fw-normal py-3">Ubicación</th>
+                                <th class="fw-normal py-3 text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Producto 1 -->
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="fw-bold text-dark">Paracetamol 500mg</div>
+                                    <small class="text-muted">Lote: PF-2025-014</small>
+                                </td>
+                                <td>
+                                    <span class="badge bg-light text-dark border px-2 py-1 fw-normal">Analgésicos</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="fw-bold">240</span> <small class="text-muted">caja</small>
+                                </td>
+                                <td class="text-end fw-bold">
+                                    S/ 0.55
+                                </td>
+                                <td class="text-muted">
+                                    Estante A-12
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-eye"></i></button>
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Producto 2 -->
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="fw-bold text-dark">Ibuprofeno 400mg</div>
+                                    <small class="text-muted">Lote: IB-2024-882</small>
+                                </td>
+                                <td>
+                                    <span class="badge bg-light text-dark border px-2 py-1 fw-normal">Antiinflamatorio</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="fw-bold">96</span> <small class="text-muted">caja</small>
+                                </td>
+                                <td class="text-end fw-bold">
+                                    S/ 0.80
+                                </td>
+                                <td class="text-muted">
+                                    Estante A-12
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-eye"></i></button>
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Producto 3 (Agotado) -->
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="fw-bold text-dark">Amoxicilina 500mg</div>
+                                    <small class="text-muted">Lote: AM-2025-001</small>
+                                </td>
+                                <td>
+                                    <span class="badge bg-light text-dark border px-2 py-1 fw-normal">Antibióticos</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="fw-bold text-danger">0</span> <small class="text-muted">caja</small>
+                                    <i class="bi bi-exclamation-triangle text-danger ms-1" title="Agotado"></i>
+                                </td>
+                                <td class="text-end fw-bold">
+                                    S/ 12.50
+                                </td>
+                                <td class="text-muted">
+                                    -
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-eye"></i></button>
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Producto 4 (Poco stock) -->
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="fw-bold text-dark">Loratadina 10mg</div>
+                                    <small class="text-muted">Lote: LR-2025-033</small>
+                                </td>
+                                <td>
+                                    <span class="badge bg-light text-dark border px-2 py-1 fw-normal">Antihistamínicos</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="fw-bold text-danger">5</span> <small class="text-muted">caja</small>
+                                    <i class="bi bi-exclamation-triangle text-danger ms-1" title="Poco stock"></i>
+                                </td>
+                                <td class="text-end fw-bold">
+                                    S/ 3.20
+                                </td>
+                                <td class="text-muted">
+                                    Estante B-05
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-eye"></i></button>
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light text-muted border-0"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCIÓN REGISTRO (Formularios) -->
+    <!-- ============================================ -->
+    <section id="registro" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <i class="bi bi-box-seam display-4 text-primary mb-3"></i>
+                <h2 class="fw-bold">Gestión de Operaciones</h2>
+                <p class="text-muted">Registra ingresos de mercadería o reporta incidencias del inventario.</p>
+            </div>
+
+            <div class="row justify-content-center g-4">
+                
+                <!-- Formulario 1: Ingreso de Mercadería -->
+                <div class="col-lg-6">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body p-4 p-md-5">
+                            <h4 class="fw-bold mb-4"><i class="bi bi-capsule text-primary me-2"></i>Ingreso de Mercadería</h4>
+                            <form action="#" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Nombre del Medicamento</label>
+                                    <input type="text" class="form-control bg-light" placeholder="Ej. Paracetamol 500mg" required>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Categoría</label>
+                                        <select class="form-select bg-light" required>
+                                            <option value="" selected disabled>Seleccionar...</option>
+                                            <option>Analgésico</option>
+                                            <option>Antibiótico</option>
+                                            <option>Antiinflamatorio</option>
+                                            <option>Otros</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Cantidad (Unidades)</label>
+                                        <input type="number" class="form-control bg-light" min="1" placeholder="0" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Lote / Vencimiento</label>
+                                    <input type="text" class="form-control bg-light" placeholder="Ej. Lote A-123 - Vence 12/2026" required>
+                                </div>
+                                
+                                <!-- Botón que activa el Modal -->
+                                <button type="button" class="btn btn-primary w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#modalConfirmacion">
+                                    <i class="bi bi-check2-circle me-2"></i>Registrar Ingreso
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario 2: Registro de Incidencias -->
+                <div class="col-lg-6">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body p-4 p-md-5">
+                            <h4 class="fw-bold mb-4"><i class="bi bi-exclamation-octagon text-warning me-2"></i>Reportar Incidencia</h4>
+                            <form action="#" method="post">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Tipo de incidencia</label>
+                                    <select class="form-select bg-light" required>
+                                        <option value="" selected disabled>Seleccionar tipo...</option>
+                                        <option value="merma">Merma (producto dañado)</option>
+                                        <option value="accidente">Accidente/Rotura</option>
+                                        <option value="vencido">Producto vencido no registrado</option>
+                                        <option value="perdida">Pérdida/Misterio</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Medicamento afectado</label>
+                                    <input type="text" class="form-control bg-light" placeholder="Ej. Amoxicilina 500mg" required>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Cantidad afectada</label>
+                                        <input type="number" class="form-control bg-light" min="1" placeholder="0" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Fecha del incidente</label>
+                                        <input type="date" class="form-control bg-light" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Descripción breve</label>
+                                    <textarea class="form-control bg-light" rows="2" placeholder="Describa qué ocurrió..." required></textarea>
+                                </div>
+                                
+                                <!-- Botón que activa el Modal -->
+                                <button type="button" class="btn btn-warning w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#modalConfirmacion">
+                                    <i class="bi bi-exclamation-triangle me-2"></i>Registrar Incidencia
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center mt-auto">
+        <div class="container">
+            <p class="mb-0"><i class="bi bi-hospital me-2"></i>Nova Farma &copy; 2026 - Sistema de Gestión</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- MODAL DE CONFIRMACIÓN (Requisito Rúbrica) -->
+    <!-- ============================================ -->
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-success text-white border-0">
+                    <h5 class="modal-title" id="modalLabel"><i class="bi bi-check-circle-fill me-2"></i>¡Registro Exitoso!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <p class="fs-5 mb-0">La mercadería ha sido ingresada al inventario correctamente.</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-success px-4" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- JS BUNDLE DE BOOTSTRAP (Requisito Rúbrica) -->
     <!-- ============================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
