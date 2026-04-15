@@ -1,16 +1,90 @@
 /* ============================================
    Nova Farma - Estilos personalizados
-   (Landing Page Simple)
+   Paleta: #212529 Corporativo + Tonos Tierra
    ============================================ */
 
 body {
-    background-color: #f8f9fa;
-    scroll-behavior: smooth; /* Para que la navegacion por anclas sea suave */
+    background-color: #F8F6F3;
+    scroll-behavior: smooth;
 }
 
 /* ============================================
-   NAVBAR Y SECCIONES
+   COLORES CORPORATIVOS
    ============================================ */
+.text-corporativo {
+    color: #212529 !important;
+}
+
+.bg-corporativo {
+    background-color: #212529 !important;
+}
+
+.btn-corporativo {
+    background-color: #212529;
+    border-color: #212529;
+    color: white;
+}
+
+.btn-corporativo:hover {
+    background-color: #1a1d21;
+    border-color: #1a1d21;
+    color: white;
+}
+
+/* Colores Tierra */
+.text-tierra {
+    color: #8B7355 !important;
+}
+
+.bg-tierra {
+    background-color: #8B7355 !important;
+}
+
+.badge-tierra {
+    background-color: #8B7355;
+    color: white;
+}
+
+.text-tierra-suave {
+    color: #A8B5A0 !important;
+}
+
+.bg-tierra-suave {
+    background-color: #A8B5A0 !important;
+}
+
+/* Colores Semánticos Suavizados */
+.text-exito {
+    color: #5B8C5A !important;
+}
+
+.bg-exito {
+    background-color: #5B8C5A !important;
+}
+
+.text-advertencia {
+    color: #D4A853 !important;
+}
+
+.bg-advertencia {
+    background-color: #D4A853 !important;
+}
+
+.text-peligro {
+    color: #B85450 !important;
+}
+
+.bg-peligro {
+    background-color: #B85450 !important;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar-corporativo {
+    background-color: #212529;
+}
+
 .navbar-brand {
     font-size: 1.5rem;
     letter-spacing: -0.5px;
@@ -25,8 +99,12 @@ section {
    HERO Y SECCIONES
    ============================================ */
 .hero-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%);
-    border-bottom: 1px solid #dee2e6;
+    background: linear-gradient(135deg, #F8F6F3 0%, #EDE8E2 100%);
+    border-bottom: 1px solid #d5cec5;
+}
+
+.seccion-alternada {
+    background-color: #EDE8E2;
 }
 
 /* ============================================
@@ -38,20 +116,45 @@ section {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    box-shadow: 0 .5rem 1rem rgba(33, 37, 41, 0.1) !important;
 }
 
 .table-responsive {
     border-radius: 0.375rem;
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar styling para tablas en móviles */
+.table-responsive::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #8B7355;
+    border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #6d5a42;
+}
+
+/* Colores de tabla alternados suaves */
+.table-tierra tbody tr:nth-of-type(odd) {
+    background-color: rgba(248, 246, 243, 0.5);
 }
 
 /* ============================================
    FORMULARIO
    ============================================ */
 .form-control:focus, .form-select:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+    border-color: #8B7355;
+    box-shadow: 0 0 0 0.25rem rgba(139, 115, 85, 0.15);
 }
 
 /* ============================================
@@ -67,4 +170,66 @@ section {
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
+}
+
+/* ============================================
+   BOTONES PERSONALIZADOS
+   ============================================ */
+.btn-tierra {
+    background-color: #8B7355;
+    border-color: #8B7355;
+    color: white;
+}
+
+.btn-tierra:hover {
+    background-color: #7a6549;
+    border-color: #7a6549;
+    color: white;
+}
+
+.btn-advertencia {
+    background-color: #D4A853;
+    border-color: #D4A853;
+    color: #212529;
+}
+
+.btn-advertencia:hover {
+    background-color: #c49a4a;
+    border-color: #c49a4a;
+    color: #212529;
+}
+
+.btn-peligro {
+    background-color: #B85450;
+    border-color: #B85450;
+    color: white;
+}
+
+.btn-peligro:hover {
+    background-color: #a04844;
+    border-color: #a04844;
+    color: white;
+}
+
+/* ============================================
+   TABLAS RESPONSIVE EN MÓVILES
+   ============================================ */
+
+/* Asegurar que las tablas tengan ancho mínimo para activar scroll en 375px */
+@media (max-width: 576px) {
+    .table-responsive table {
+        min-width: 500px;
+    }
+
+    /* Las celdas no se comprimen tanto */
+    .table-responsive td,
+    .table-responsive th {
+        white-space: nowrap;
+    }
+
+    /* Padding reducido en móviles para aprovechar mejor el espacio */
+    .table-responsive .px-4 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
 }

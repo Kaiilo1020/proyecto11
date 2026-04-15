@@ -16,7 +16,7 @@ Rubrica ATF1 - Entrega Final (Landing Page)
     └── css/
         └── temas.css       → Estilos personalizados minimos
 
-NOTA: No hay archivos JavaScript propios. Solo se usa el JS bundle
+NOTA: No hay archivos JavaScript propios. Solo usamos el JS bundle
 de Bootstrap desde CDN para navbar collapse y modales.
 
 
